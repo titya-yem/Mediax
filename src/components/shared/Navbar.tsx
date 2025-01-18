@@ -1,6 +1,6 @@
 "use client";
 
-import logo from "../../public/Logo.png";
+import logo from "@/../public/Logo.png";
 import { NavbarLists } from "@/contexts/NavbarLists";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
@@ -14,7 +14,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import toggleMenu from "../../public/menu.svg";
+import toggleMenu from "@/../public/menu.svg";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -62,13 +62,13 @@ const Navbar = () => {
             <SheetTrigger className="block md:hidden">
               <Image src={toggleMenu} width={25} alt="Mediax toggleMenu" />
             </SheetTrigger>
-            <SheetContent>
+            <SheetContent className="w-3/5">
               <SheetHeader>
                 <SheetTitle className="text-white bg-[#ed0734] w-[132px] px-2 rounded-md">
                   Mediax Clinic
                 </SheetTitle>
                 <SheetDescription asChild>
-                  <ul className="flex flex-col justify-center items-start gap-6">
+                  <ul className="grid grid-cols-1 gap-6 text-base pt-10">
                     {NavbarLists.map((li) => (
                       <li
                         key={li.name}
